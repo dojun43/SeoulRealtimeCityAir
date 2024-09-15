@@ -20,6 +20,20 @@ resource "google_compute_firewall" "allow-streamlit" {
   target_tags   = ["allow-streamlit"]
 }
 
+resource "google_compute_firewall" "allow-postgres" {
+  name    = "allow-postgres"
+  project = var.project
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["5431","5432"]
+  }
+
+  source_ranges = ["0.0.0.0/0"] 
+  target_tags   = ["allow-postgres"]
+}
+
 resource "google_compute_firewall" "allow-airflow-webserver" {
   name    = "allow-airflow-webserver"
   project = var.project
@@ -69,5 +83,5 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = file("startup_script.sh")
 
-  tags = ["allow-ssh", "allow-airflow-webserver", "allow-streamlit"]
+  tags = ["allow-ssh", "allow-airflow-webserver", "allow-streamlit", "allow-postgres"]
 }
