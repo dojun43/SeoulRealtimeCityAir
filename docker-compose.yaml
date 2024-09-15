@@ -86,6 +86,28 @@ x-airflow-common:
       condition: service_healthy
 
 services:
+  streamlit_app:
+    image: python:3.8-slim
+    container_name: streamlit_app
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: always
+    volumes:
+    - ${AIRFLOW_PROJ_DIR:-.}/app:/app
+    working_dir: /app
+    command: >
+      bash -c "pip install --upgrade pip && 
+      pip install -r requirements.txt && 
+      streamlit run streamlit_app.py"
+    ports:
+      - 8501:8501
+    networks:
+      network_custom:
+        ipv4_address: 172.28.0.11
+    
   postgres_custom:
     image: postgres:13
     environment:

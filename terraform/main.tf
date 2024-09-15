@@ -6,6 +6,20 @@ resource "google_compute_address" "static_ip" {
 }
 
 # port 허용 
+resource "google_compute_firewall" "allow-streamlit" {
+  name    = "allow-streamlit"
+  project = var.project
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+    ports    = ["8501"]
+  }
+
+  source_ranges = ["0.0.0.0/0"] 
+  target_tags   = ["allow-streamlit"]
+}
+
 resource "google_compute_firewall" "allow-airflow-webserver" {
   name    = "allow-airflow-webserver"
   project = var.project
@@ -55,5 +69,5 @@ resource "google_compute_instance" "default" {
 
   metadata_startup_script = file("startup_script.sh")
 
-  tags = ["allow-ssh", "allow-airflow-webserver"]
+  tags = ["allow-ssh", "allow-airflow-webserver", "allow-streamlit"]
 }
