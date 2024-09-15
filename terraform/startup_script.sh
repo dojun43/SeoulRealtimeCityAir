@@ -29,3 +29,17 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 echo "End Docker installation" >> /var/log/startup_script.log
+
+
+## git
+
+# create user
+sudo adduser --disabled-password --gecos "" airflow
+sudo usermod -aG sudo airflow
+
+# git clone
+sudo -u airflow -H bash -c "cd /home/airflow && git clone https://github.com/dojun43/SeoulRealtimeCityAir.git"
+sudo chown -R airflow:airflow /home/airflow/SeoulRealtimeCityAir
+
+# make dir
+sudo -u airflow -H bash -c "cd /home/airflow/SeoulRealtimeCityAir && mkdir -p ./logs ./config"
