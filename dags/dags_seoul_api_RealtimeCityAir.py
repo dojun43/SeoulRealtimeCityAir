@@ -25,7 +25,7 @@ with DAG(
     RealtimeCityAir_status_to_csv = SeoulApiToCsvOperator(
         task_id='RealtimeCityAir_status_to_csv',
         dataset_nm='RealtimeCityAir',
-        path='$HOME/files/RealtimeCityAir',
+        path='/home/airflow/SeoulRealtimeCityAir/files/RealtimeCityAir',
         file_name='RealtimeCityAir_{{data_interval_end.in_timezone("Asia/Seoul") | ds}}.csv'
     )
 
@@ -38,7 +38,7 @@ with DAG(
         python_callable=insrt_postgres,
         op_kwargs={'postgres_conn_id': 'conn-db-postgres-custom',
                 'tbl_nm': 'RealtimeCityAir_{{data_interval_end.in_timezone("Asia/Seoul") | ds}}',
-                'file_nm':'$HOME/files/RealtimeCityAir/RealtimeCityAir_{{data_interval_end.in_timezone("Asia/Seoul") | ds}}.csv'
+                'file_nm':'/home/airflow/SeoulRealtimeCityAir/files/RealtimeCityAir/RealtimeCityAir_{{data_interval_end.in_timezone("Asia/Seoul") | ds}}.csv'
                 }
     )
 
