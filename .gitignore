@@ -1,0 +1,5 @@
+venv
+.env
+private
+/terraform/.terraform*
+/terraform/terraform*
