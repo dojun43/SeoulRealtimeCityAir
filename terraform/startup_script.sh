@@ -42,4 +42,4 @@ sudo -u airflow -H bash -c "cd /home/airflow && git clone https://github.com/doj
 sudo chown -R airflow:airflow /home/airflow/SeoulRealtimeCityAir
 
 # make dir
-sudo -u airflow -H bash -c "cd /home/airflow/SeoulRealtimeCityAir && mkdir -p ./logs ./config"
+sudo -u airflow -H bash -c "cd /home/airflow/SeoulRealtimeCityAir && mkdir -p ./logs ./config ./files"
