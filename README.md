@@ -72,6 +72,8 @@ sudo docker compose up -d
 - Airflow 웹 UI (http://<GCE_INSTANCE_IP>:8080)에 접속하여 Airflow Variables 및 Airflow Connection에 필요한 연결 정보를 추가합니다.
 - 참고: https://doodo0126.tistory.com/35 
 
+#### 4. DAG 활성화
+- Airflow 웹 UI에 접속한 후 dags_seoul_api_RealtimeCityAir DAG을 활성화합니다.
 
 ## Architecture
 ### Data Sources 
