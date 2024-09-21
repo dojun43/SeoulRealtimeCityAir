@@ -10,7 +10,7 @@ Terraform을 이용해 GCE 인프라를 구성하고, Docker 환경에서 Apache
 
 ## Getting Started
 ### Prerequisites
-- Python 3.12.10
+- Python 3.12.5
 - Google Cloud Platform (GCP) 계정
 - Terraform v1.9.5
 
