@@ -91,6 +91,7 @@ sudo docker compose up -d
   
 ![image](https://github.com/user-attachments/assets/44844a80-4c3a-4c2f-a4c3-dfc4bad2649d)
 
-![image](https://github.com/user-attachments/assets/208c1804-3dd7-434e-9331-149936c92e04)
+![image](https://github.com/user-attachments/assets/f102b3d4-9dc8-44eb-b4dd-b4580968fe1b)
+
 
 
