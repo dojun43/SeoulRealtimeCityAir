@@ -6,7 +6,7 @@
 
 Terraform을 이용해 GCE 인프라를 구성하고, Docker 환경에서 Apache Airflow를 배포하여 데이터 파이프라인을 구성했습니다.
 
-![image](https://github.com/user-attachments/assets/4278a72c-e5c3-4765-948a-e6d3f4587556)
+![image](https://github.com/user-attachments/assets/f07d1748-ed19-4e13-8cf4-7487c67f25a1)
 
 ## Getting Started
 ### Prerequisites
