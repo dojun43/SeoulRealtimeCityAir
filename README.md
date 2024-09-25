@@ -85,5 +85,12 @@ sudo docker compose up -d
 - 추출한 데이터를 날짜 별로 테이블을 생성합니다.
 ### Load 
 - 생성된 데이터를 Postgres에 저장합니다.
+### Visualization
+- Streamlit을 기반으로 대기, 지역구, 날짜, 시간 별로 대기환경를 시각화합니다.
+- 필터링을 기반으로 특정 시간에 지역의 대기환경 정보를 얻을 수 있습니다.
   
+![image](https://github.com/user-attachments/assets/44844a80-4c3a-4c2f-a4c3-dfc4bad2649d)
+
+![image](https://github.com/user-attachments/assets/208c1804-3dd7-434e-9331-149936c92e04)
+
 
