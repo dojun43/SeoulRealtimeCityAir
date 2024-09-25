@@ -99,6 +99,8 @@ services:
     volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/app:/app
     working_dir: /app
+    env_file:
+      - .env
     command: >
       bash -c "pip install --upgrade pip && 
       pip install -r requirements.txt && 
