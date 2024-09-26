@@ -7,6 +7,7 @@ import altair as alt
 from datetime import datetime
 from datetime import date
 from plots import make_map, make_donut 
+from zoneinfo import ZoneInfo
 
 ################### execute query
 def execute_query(query):
@@ -114,9 +115,9 @@ with st.sidebar:
 
     # 날짜 선택 
     selected_date = st.date_input('날짜 선택', 
-                                  value=date.today(), # 기본값
+                                  value=datetime.now(ZoneInfo("Asia/Seoul")).date(), # 기본값
                                   min_value=date(2024, 9, 15),  
-                                  max_value=date.today()
+                                  max_value=datetime.now(ZoneInfo("Asia/Seoul")).date()
                                 )
     
     # 시간 선택
