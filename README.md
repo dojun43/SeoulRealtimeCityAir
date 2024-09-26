@@ -76,7 +76,7 @@ sudo docker compose up -d
 - Airflow 웹 UI에 접속한 후 dags_seoul_api_RealtimeCityAir DAG을 활성화합니다.
 
 #### 5. Streamlit 환경설정
-- .env 파일에 Streamlit에서 사용할 DB에 대한 정보를 지정합니다.
+- .env 파일에 Streamlit에서 접속할 DB에 대한 정보를 지정합니다.
 ```
 vi .env
 
