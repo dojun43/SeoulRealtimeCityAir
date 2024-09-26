@@ -22,12 +22,16 @@ def make_map(input_df, input_id, input_column):
         bins = [0, 16, 36, 76, 300]
         colors = ['#5C8CDD', '#65B24B', '#E2D058', '#EC7070']
 
-    if input_column == 'PM10':
+    elif input_column == 'PM10':
         bins = [0, 31, 81, 151, 300]
         colors = ['#5C8CDD', '#65B24B', '#E2D058', '#EC7070']
 
-    if input_column == 'O3':
+    elif input_column == 'O3':
         bins = [0, 0.031, 0.091, 0.151, 0.3]
+        colors = ['#5C8CDD', '#65B24B', '#E2D058', '#EC7070']
+    
+    elif input_column == 'IDEX_MVL':
+        bins = [0, 51, 101, 251, 500]
         colors = ['#5C8CDD', '#65B24B', '#E2D058', '#EC7070']
 
     colormap = branca.colormap.StepColormap(

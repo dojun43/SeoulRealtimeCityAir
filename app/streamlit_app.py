@@ -94,7 +94,7 @@ with st.sidebar:
     st.title('서울시 대기환경 현황')
     
     # 대기 선택
-    air_list = ['미세먼지(PM-10)','초미세먼지(PM-2.5)','오존(O3)']
+    air_list = ['미세먼지(PM-10)','초미세먼지(PM-2.5)','오존(O3)','통합대기환경지수']
         
     selected_air = st.selectbox('대기 선택', 
                                 air_list, 
@@ -218,6 +218,7 @@ with col[0]:
     air_code_dict = {'미세먼지(PM-10)' : 'PM10',
                     '초미세먼지(PM-2.5)' : 'PM25', 
                      '오존(O3)' : 'O3',
+                     '통합대기환경지수' : 'IDEX_MVL'
                      } 
     selected_air_code = air_code_dict[selected_air]
 
