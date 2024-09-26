@@ -1,10 +1,10 @@
 # SeoulRealtimeCityAir
 ## Overview 
-이 프로젝트는 서울시의 실시간 대기현황 데이터를 매시간 수집하여 정형화된 형식으로 저장하고, 이를 분석 및 시각화를 위해 사용할 수 있도록 설계된 데이터 파이프라인입니다. 
+서울시의 실시간 대기현황 데이터를 매시간 수집하여 정형화된 형식으로 저장하고, 이를 분석 및 시각화를 위해 사용할 수 있도록 설계된 데이터 파이프라인입니다. 
 
 서울시 열린데이터 광장 API를 통해 대기현황 데이터를 수집하며, Apache Airflow를 사용해 스케줄링을 자동화했습니다. 
 
-Terraform을 이용해 GCE 인프라를 구성하고, Docker 환경에서 Apache Airflow를 배포하여 데이터 파이프라인을 구성했습니다.
+인프라 환경은 Terraform을 이용해 GCE를 생성하고, Docker 환경에서 Apache Airflow를 배포하여 데이터 파이프라인을 구성했습니다.
 
 ![image](https://github.com/user-attachments/assets/f07d1748-ed19-4e13-8cf4-7487c67f25a1)
 
@@ -15,7 +15,7 @@ Terraform을 이용해 GCE 인프라를 구성하고, Docker 환경에서 Apache
 - Terraform v1.9.5
 
 ### Setup
-이 프로젝트는 Google Cloud Platform과 Docker 환경을 기반으로 작동합니다. 아래 단계에 따라 환경을 설정하고, 데이터 파이프라인을 실행할 수 있습니다. 각 단계에서 필요한 의존성 설치 및 구성 방법을 안내합니다.
+해당 프로젝트는 Google Cloud Platform과 Docker에서 동작합니다. 아래 단계에 따라 환경을 설정하고, 필요한 의존성 설치 및 구성 방법을 안내합니다.
 
 #### 1. Google Cloud 인프라 구성 (Terraform 사용)
 - gcp service account json파일을 git repository home의 private 경로에 생성합니다.
@@ -75,6 +75,18 @@ sudo docker compose up -d
 #### 4. DAG 활성화
 - Airflow 웹 UI에 접속한 후 dags_seoul_api_RealtimeCityAir DAG을 활성화합니다.
 
+#### 5. Streamlit 환경설정
+- .env 파일에 Streamlit에서 사용할 DB에 대한 정보를 지정합니다.
+```
+vi .env
+
+HOST=172.28.0.3
+POSTGRES_CUSTOM_PORT=5432
+POSTGRES_CUSTOM_DBNAME=[DB 명 설정]
+POSTGRES_CUSTOM_USER=[DB 유저명 설정]
+POSTGRES_CUSTOM_PASSWORD=[DB 패스워드 설정]
+```
+
 ## Architecture
 ### Data Sources 
 - 서울시 열린데이터 광장: https://data.seoul.go.kr/dataList/OA-2219/S/1/datasetView.do
@@ -91,7 +103,8 @@ sudo docker compose up -d
   
 ![image](https://github.com/user-attachments/assets/44844a80-4c3a-4c2f-a4c3-dfc4bad2649d)
 
-![image](https://github.com/user-attachments/assets/f102b3d4-9dc8-44eb-b4dd-b4580968fe1b)
+![image](https://github.com/user-attachments/assets/cc3c2803-bc8b-4a86-bf9f-b92dbfe50114)
+
 
 
 
