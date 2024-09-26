@@ -6,7 +6,7 @@
 
 Terraform을 이용해 GCE 인프라를 구성하고, Docker 환경에서 Apache Airflow를 배포하여 데이터 파이프라인을 구성했습니다.
 
-![image](https://github.com/user-attachments/assets/2ed752df-3b08-41fc-8e50-01aa74f3d4f8)
+![image](https://github.com/user-attachments/assets/f07d1748-ed19-4e13-8cf4-7487c67f25a1)
 
 ## Getting Started
 ### Prerequisites
@@ -85,5 +85,13 @@ sudo docker compose up -d
 - 추출한 데이터를 날짜 별로 테이블을 생성합니다.
 ### Load 
 - 생성된 데이터를 Postgres에 저장합니다.
+### Visualization
+- Streamlit을 기반으로 대기, 지역구, 날짜, 시간 별로 대기환경를 시각화합니다.
+- 필터링을 기반으로 특정 시간에 지역의 대기환경 정보를 얻을 수 있습니다.
   
+![image](https://github.com/user-attachments/assets/44844a80-4c3a-4c2f-a4c3-dfc4bad2649d)
+
+![image](https://github.com/user-attachments/assets/f102b3d4-9dc8-44eb-b4dd-b4580968fe1b)
+
+
 
