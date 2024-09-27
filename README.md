@@ -1,4 +1,6 @@
 # SeoulRealtimeCityAir
+<img src="https://img.shields.io/badge/terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white"> <img src="https://img.shields.io/badge/googlecloud-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white"> <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"> <img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"> <img src="https://img.shields.io/badge/apacheairflow-017CEE?style=for-the-badge&logo=apacheairflow&logoColor=white"> <img src="https://img.shields.io/badge/streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white"> 
+
 ## Overview 
 서울시의 실시간 대기현황 데이터를 매시간 수집하여 정형화된 형식으로 저장하고, 이를 분석 및 시각화를 위해 사용할 수 있도록 설계된 데이터 파이프라인입니다. 
 
