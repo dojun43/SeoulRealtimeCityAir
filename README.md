@@ -87,7 +87,7 @@ POSTGRES_CUSTOM_USER=[DB 유저명 설정]
 POSTGRES_CUSTOM_PASSWORD=[DB 패스워드 설정]
 ```
 
-## Architecture
+## Data Pipeline
 ### Data Sources 
 - 서울시 열린데이터 광장: https://data.seoul.go.kr/dataList/OA-2219/S/1/datasetView.do
 ### Extract 
